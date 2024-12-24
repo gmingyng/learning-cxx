@@ -11,7 +11,7 @@ unsigned long long fibonacci(int i) {
             return 1;
         default:
             // TODO: 补全三目表达式缺失的部分
-            return (i<0) ? 0 : (arr[i] = fibonacci(i - 1) + fibonacci(i - 2));
+            return (arr[i]) ? (arr[i] = arr[i - 1] + arr[i - 2]) : (arr[i] = fibonacci(i - 1) + fibonacci(i - 2));
     }
 }
 
@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
     ASSERT(sizeof(arr) == 720, "sizeof array is size of all its elements");
     // ---- 不要修改以下代码 ----
     ASSERT(fibonacci(2) == 1, "fibonacci(2) should be 1");
+    std::cout<<fibonacci(20);
     ASSERT(fibonacci(20) == 6765, "fibonacci(20) should be 6765");
     ASSERT(fibonacci(80) == 23416728348467685, "fibonacci(80) should be 23416728348467685");
     return 0;
